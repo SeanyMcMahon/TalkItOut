@@ -54,4 +54,10 @@ public class Problem extends Model {
 
         return Problem.find.where().eq("user.email", owner).findList();
     }
+
+    public static void delete(Long id){
+
+        Problem.find.ref(id).delete();
+    }
+
 }
