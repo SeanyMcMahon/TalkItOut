@@ -1,0 +1,40 @@
+@(loginForm: Form[Application.Login])
+
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    <link rel='shortcut icon' type='image/png' href='@routes.Assets.at("images/favicon.png")'>
+    <link rel='stylesheet' href='@routes.Assets.at("stylesheets/bootstrap.min.css")'>
+    <link rel='stylesheet' href='@routes.Assets.at("stylesheets/main.css")'>
+
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/jquery.min.js")'></script>
+</head>
+<body>
+    <header>
+    </header>
+
+<div class="container">
+
+
+    <div class="container" id="login">
+
+
+        @helper.form(action = routes.Application.authenticate()){
+
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" name="email"class="form-control" placeholder="Email address" value="@loginForm("email").value" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <a href="@routes.Register.register()">Register</a>
+
+        }
+    </div> <!-- /container -->
+
+
+
+
+</div>
+</body>
+</html>

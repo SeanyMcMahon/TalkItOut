@@ -1,0 +1,200 @@
+a.problem-name{
+
+    width:80px;
+    height:23px;
+    display:inline-block;
+    margin:0px;
+    padding:5px;
+
+}
+
+#problem-container{
+
+    margin:5px 0 0 80px;
+    width:800px;
+    height:1200px;
+    border-radius:5px;
+
+}
+
+#problem-container > textarea{
+
+    margin:40px;
+    width:300px;
+    height:3000px;
+
+}
+
+#problem-container > input{
+
+    margin-left:0;
+    width: 300px;
+
+}
+
+.sidebar > h4{
+
+    padding-top:4px;
+    padding-left:2px
+
+}
+
+.problem-group{
+
+    display: none;
+
+}
+
+.hide{
+    display:none;
+
+}
+
+#login{
+
+    width: 300px;
+    height: 250px;
+
+
+}
+
+
+textarea{
+
+    width:600px;
+    height:450px;
+
+
+}
+
+input{
+    margin-bottom: 5px !important;
+}
+
+span.spacer{
+
+    width:5px;
+    clear:both;
+    margin:15px;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tabs1{
+    width: 700px;
+    margin-top:20px;
+
+}
+
+.tabs1 > li{
+
+    background-color: #dddddd !important;
+
+}
+
+.sidebar-module{
+
+    background-color: #dddddd;
+    position: relative !important;
+    top: 22px;
+    padding-top: 3px;
+    min-height: 545px;
+    max-width: 170px;
+
+}
+
+.sidebar-module > a{
+    position:relative !important;
+    left:115px;
+    top:-29px;
+
+}
+
+
+.sidebar-module > h4 {
+
+    position:relative !important;
+    left:3px;
+
+}
+
+body{
+    background-color: #EEE;
+
+}
+
+.ui-widget-header{
+
+    background-color: #dddddd !important;
+    border: inherit !important;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+
+    color: rgb(83, 73, 61) !important;
+}
+
+.pull-right{
+
+    left: 850px;
+}
+
+.navbar-inverse{
+    background-color: #FFFFFF !important;
+
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{
+
+    color:#97A0A3;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus{
+
+    background-color:#B9B9B9 ;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus{
+
+
+    color: #E2943F !important;
+
+}
+
+
+.navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus{
+
+    color:  #E2943F !important;
+
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl{
+
+   border-radius: 0 !important;
+}
+
+
+.tip{
+
+    width:150px;
+    height:auto;
+    background-color: #dddddd;
+    position: relative;
+    left: 5px;
+    top: 22px;
+    display:none;
+    padding:5px;
+}

@@ -3,7 +3,28 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET         /                                  controllers.Application.index()
+
+
+GET         /problems                          controllers.Application.problems()
+
+GET         /addProblem                        controllers.Application.addProblem()
+
+GET         /problems/:id/deleteProblem        controllers.Application.deleteProblem(id: Long)
+
+POST        /updateProblem                     controllers.Application.updateProblem()
+
+GET         /login                             controllers.Application.login()
+
+GET         /logout                            controllers.Application.logout()
+
+POST        /login                             controllers.Application.authenticate()
+
+GET         /register                          controllers.Register.register()
+
+POST        /submit                            controllers.Register.submit()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file                      controllers.Assets.at(path="/public", file)
+
+GET         /jsroutes                          controllers.Application.javascriptRoutes()

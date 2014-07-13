@@ -39,4 +39,11 @@ public class User extends Model {
         return find.where().eq("email" , email).eq("password", password).findUnique();
     }
 
+    public static boolean exists(String email){
+
+        if(find.where().eq("email", email).findUnique() == null){
+            return false;
+        }else{ return true;}
+    }
+
 }

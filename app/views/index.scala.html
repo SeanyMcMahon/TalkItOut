@@ -1,7 +1,92 @@
-@(message: String)
+@(problems: List[Problem], user: User)
 
-@main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+@main("TalkItOut", user) {
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="problem-stage">
+
+                @for(problem <- problems) {
+                    <div class="container problem-group" data-problem-group="@problem.id">
+                        <div class="tabs1">
+                            <ul>
+                                <li class="tab" data-tab="1"><a href="#tabs-1">Description</a></li>
+                                <li class="tab" data-tab="2"><a href="#tabs-2">Conversation</a></li>
+                                <li class="tab" data-tab="3"><a href="#tabs-3">Resources</a></li>
+                                <li class="tab" data-tab="4"><a href="#tabs-4">Solution</a></li>
+                                <li class="tab save" data-tab="5" data-id="@problem.id"><a href="#tabs-5">Save</a></li>
+                            </ul>
+
+                            <div id="tabs-1">
+                                <input type= "text" class="name" name="name" data-id="@problem.id">
+                                <textarea class="description" name="description" data-id="@problem.id"></textarea>
+                            </div>
+                            <div id="tabs-2" class="container">
+                                <textarea class="conversation" name="conversation" data-id="@problem.id"></textarea>
+                            </div>
+                            <div  id="tabs-3" class="container">
+                                <textarea class="resources" name="resources" data-id="@problem.id"></textarea>
+                            </div>
+                            <div  id="tabs-4" class="container">
+                                <textarea class="solution" name="solution" data-id="@problem.id"></textarea>
+                            </div>
+
+                        </div> <!-- endofTabs-->
+                    </div> <!--end of problem group container-->
+                }
+                </div><!--problem stage-->
+
+            </div><!--EndofCol-->
+
+
+            <div class="col-lg-2">
+                <div class="tip tip1">
+                    <p>Add a title and description for your problem.</p>
+                    <p>This is where you understand the nature of the problem.</p>
+                    <p>Try and use all the W's and How in the description</p>
+                    <p>What?, Why?, When?, Where?, How? </p>
+
+                </div>
+
+                <div class="tip tip2">
+                    <p>Use a socratic conversation to eleminate contradictions in your thought.</p>
+                    <p>Try to uncover all potential roots of the problem.</p>
+                    <p>Hit the <code>Down</code> key twice to start a conversation. Hit the <code>Down</code> key twice again to change names.</p>
+                    <p><b>Mark:</b> I'm finding it difficult to learn algebra.</p>
+                    <p><b>Socrates:</b> What part of algebra?</p>
+                    <p><b>Mark:</b>  Differential equations..</p>
+                    <p><b>Socrates:</b> Can you write out a problem you think is difficult?</p>
+                    <p><b>Mark:</b> X + Y = ...</p>
+                </div>
+
+                <div class="tip tip3">
+                    <p>Add all external references and links here.</p>
+                    <p>Articles on Wikipedia, ebooks, questions you asked on forums...</p>
+                </div>
+
+                <div class="tip tip4">
+                    <p>Save your solution here!</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="sidebar-module">
+
+                    <h4>Problems</h4>
+                    <a href="@routes.Application.addProblem()" >Add</a>
+                    <ol class="list-unstyled list-inline">
+
+                    @for(problem <- problems) {
+                        @problemListItem(problem)
+
+                    }
+                    </ol>
+                </div>
+            </div><!--EndofCol-->
+        </div> <!--EndofRow-->
+
+    </div>
 
 }

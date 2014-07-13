@@ -1,0 +1,7 @@
+@(problem: Problem)
+<li>
+    <a href="#" class="problem-name ellipsis" data-problem-name="@problem.id">@problem.name</a>
+    <span class="spacer"></span>
+    <a href="@routes.Application.deleteProblem(problem.id)" >delete</a>
+
+</li>
