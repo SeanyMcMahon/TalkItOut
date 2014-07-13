@@ -14,7 +14,7 @@ public class ModelTests extends WithApplication{
 
     @Before
     public void setUp(){
-       start(fakeApplication(inMemoryDatabase())) ;
+       start(fakeApplication(inMemoryDatabase(),fakeGlobal())) ;
 
     }
 
@@ -25,7 +25,7 @@ public class ModelTests extends WithApplication{
          new User ("bob@gmail.com", "Bob", "secret").save();
          User bob = User.find.where().eq("email","bob@gmail.com").findUnique();
          assertNotNull(bob);
-         assertEquals("Bob", bob.name);
+         assertEquals("Bob", bob.username);
      }
 
      @Test
@@ -43,22 +43,24 @@ public class ModelTests extends WithApplication{
 
     @Test
     public void createAndDeleteProblem(){
+
         new User ("bob@gmail.com", "Bob", "secret").save();
         User bob = User.find.where().eq("email","bob@gmail.com").findUnique();
 
         new Problem("learn play", "I don't understand the framework", "what area is difficult? How to route",
                 "www.stackoverflow.com", "create all route types to test..", bob).save();
 
-        new Problem("learn guitar", "I don't understand certain chords", "which ones are they? B minor, F",
-                "www.learnguitar.com", "print off chord list", bob).save();
+        new Problem("learn guitar", "I don't understand tabs", "what area is difficult? ",
+                "www.guitarmaster.com", "practice from the sheets", bob).save();
 
+        List<Problem>  problem = Problem.find.all();
+        Problem.delete(problem.get(0).id);
+        List<Problem>  problems = Problem.find.all();
 
-        Problem.delete(new Long(1));
-        List<Problem> problem = Problem.findProblemsByOwner(bob.email);
-
-        assertNotNull(problem);
-        assertEquals(problem.size(), 1);
-        assertEquals(problem.get(0).name, "learn guitar");
+        assertNotNull(problems);
+        assertTrue(problems.size() < 3);
+        assertEquals(1, problems.size());
+        assertEquals(problems.get(0).name, "learn guitar");
 
 
     }

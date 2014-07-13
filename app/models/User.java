@@ -15,15 +15,15 @@ public class User extends Model {
     public String email;
 
     @Constraints.MaxLength(value = 30, message = "Max length is 30, Don't be cheeky :)")
-    public String name;
+    public String username;
 
     @Constraints.MaxLength(value = 30, message = "Max length is 30, Don't be cheeky :)")
     public String password;
 
 
-    public User(String email, String name, String password) {
+    public User(String email, String username, String password) {
         this.email = email;
-        this.name = name;
+        this.username = username;
         this.password = password;
     }
 

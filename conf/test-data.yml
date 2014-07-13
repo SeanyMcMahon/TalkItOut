@@ -1,0 +1,34 @@
+# Users
+
+
+- &mike !!models.User
+    email:      mike@example.com
+    username:       Mike
+    password:   secret
+
+
+
+- &bob !!models.User
+    email:      bob@example.com
+    username:       Bob
+    password:   secret
+
+# Problems
+
+- &problem1 !!models.Problem
+    name: My first main problem
+    description: This is the text of my first problem
+    conversation: hi
+    resources: there
+    solution: easy pie
+    user: *bob
+
+#Sub Problem
+- &problem2 !!models.Problem
+   name: first  problem
+   description:  first  text
+   conversation: hi
+   resources: there
+   solution: hard pie
+   user: *mike
+
