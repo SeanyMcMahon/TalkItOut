@@ -41,12 +41,12 @@ public class Problem extends Model {
 
     public static Finder<Long, Problem> find = new Finder(Long.class, Problem.class);
 
-    public static void create(String name, String description, String conversation,
+    public static Problem create(String name, String description, String conversation,
                               String resources, String solution, String owner){
 
         Problem problem = new Problem(name, description, conversation, resources, solution, User.find.ref(owner));
         problem.save();
-
+        return problem;
     }
 
 
@@ -60,4 +60,24 @@ public class Problem extends Model {
         Problem.find.ref(id).delete();
     }
 
+
+
+        public static void update(String name, String description, String conversation, String resources, String solution ,Long id){
+
+
+            Problem  problem = Problem.find.ref(id);
+            problem.name = name;
+            problem.description = description;
+            problem.conversation = conversation;
+            problem.resources = resources;
+            problem.solution = solution;
+
+            problem.update();
+
+        }
+
+
+
 }
+
+
